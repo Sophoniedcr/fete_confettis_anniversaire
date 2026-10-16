@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Collection — Invitations digitales</title>
+  <meta name="description" content="Cinq modèles d'invitations digitales sur mesure : mariages et collations universitaires.">
+  <meta name="theme-color" content="#faf8f4">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf8f4; --ink: #18181a; --muted: #6f6c66; --line: rgb(24 24 26 / .12);
+      --serif: "Instrument Serif", Georgia, serif; --sans: "Instrument Sans", system-ui, sans-serif;
+      --ease: cubic-bezier(.16, 1, .3, 1);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1rem/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+    .wrap { width: min(100% - 2.5rem, 1240px); margin-inline: auto; }
+
+    header { padding: clamp(3rem, 8vw, 6rem) 0 clamp(2rem, 5vw, 3.5rem); border-bottom: 1px solid var(--line); }
+    .eyebrow { margin: 0; font: 600 .72rem var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+    h1 { margin: .8rem 0 1.2rem; font: 400 clamp(2.8rem, 7vw, 5.4rem)/.95 var(--serif); letter-spacing: -.02em; }
+    h1 em { color: var(--muted); }
+    .intro { display: grid; grid-template-columns: 1.4fr 1fr; gap: 2rem; align-items: end; }
+    .intro p { margin: 0; max-width: 56ch; color: var(--muted); }
+    .tip { padding: 1rem 1.2rem; border: 1px solid var(--line); border-radius: 14px; font-size: .9rem; color: var(--muted); }
+    .tip code { padding: .1rem .35rem; border-radius: 5px; background: rgb(24 24 26 / .06); font-size: .85em; color: var(--ink); }
+    @media (max-width: 760px) { .intro { grid-template-columns: 1fr; } }
+
+    .list { list-style: none; margin: 0; padding: 0; }
+    .model { display: grid; grid-template-columns: 3.5rem 1.1fr 1fr; gap: clamp(1.2rem, 4vw, 3rem); align-items: center; padding: clamp(2rem, 4vw, 3rem) 0; border-bottom: 1px solid var(--line); }
+    .model__n { align-self: start; font: italic 400 2.2rem/1 var(--serif); color: var(--muted); }
+    .model__preview { position: relative; display: block; overflow: hidden; border-radius: 18px; aspect-ratio: 16 / 10; background: var(--c1); text-decoration: none; }
+    .model__preview img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease), filter .8s; }
+    .model__preview:hover img { transform: scale(1.04); }
+    .model__preview span { position: absolute; left: 1rem; bottom: 1rem; padding: .5rem .9rem; border-radius: 99px; background: rgb(250 248 244 / .92); font: 600 .74rem var(--sans); letter-spacing: .04em; transform: translateY(140%); transition: transform .5s var(--ease); }
+    .model__preview:hover span, .model__preview:focus-visible span { transform: none; }
+    .model h2 { margin: 0; font: 400 clamp(2rem, 4vw, 3rem)/1 var(--serif); }
+    .model__for { margin: .4rem 0 1rem; font-weight: 500; }
+    .model__desc { margin: 0 0 1.2rem; color: var(--muted); }
+    .specs { display: grid; grid-template-columns: auto 1fr; gap: .45rem 1rem; margin: 0 0 1.4rem; font-size: .88rem; }
+    .specs dt { color: var(--muted); }
+    .specs dd { margin: 0; }
+    .palette { display: flex; gap: .3rem; }
+    .palette i { width: 22px; height: 22px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgb(0 0 0 / .1); }
+    .actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+    .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .8rem 1.2rem; border-radius: 99px; border: 1px solid var(--ink); background: var(--ink); color: var(--bg); font: 600 .8rem var(--sans); text-decoration: none; transition: transform .3s var(--ease), background .3s, color .3s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn--line { background: transparent; color: var(--ink); }
+    .btn--line:hover { background: var(--ink); color: var(--bg); }
+    @media (max-width: 860px) { .model { grid-template-columns: 1fr; } .model__n { display: none; } }
+
+    footer { padding: 3rem 0 4rem; color: var(--muted); font-size: .88rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <p class="eyebrow">Collection 2026 · Invitations digitales</p>
+      <h1>Cinq univers,<br><em>une invitation à votre image.</em></h1>
+      <div class="intro">
+        <p>Chaque modèle possède sa propre direction artistique — palette, typographies, mise en page et interaction signature. Tous incluent le compte à rebours en direct, la confirmation de présence, un pass d'accès avec QR code et l'ajout au calendrier.</p>
+        <p class="tip">Astuce : ajoutez <code>?invite=Prénom Nom</code> à l'adresse d'un modèle pour voir l'invitation personnalisée au nom d'un invité.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <ol class="list">
+      <li class="model">
+        <span class="model__n">01</span>
+        <a class="model__preview" href="stitch_midnight_wedding_digital_invitation/index.html" style="--c1:#0b0f16">
+          <img src="stitch_midnight_wedding_digital_invitation/assets/img/hero.jpg" alt="Aperçu du modèle Nocturne" loading="lazy">
+          <span>Ouvrir le modèle →</span>
+        </a>
+        <div>
+          <h2>Nocturne</h2>
+          <p class="model__for">Mariage de soirée · Samuel &amp; Grâce, Paris</p>
+          <p class="model__desc">Bleu de minuit et cuivre satiné. Le monogramme se trace à l'ouverture, une lueur de bougie suit le curseur, des braises s'élèvent et le programme se dessine comme une constellation.</p>
+          <dl class="specs">
+            <dt>Palette</dt><dd class="palette"><i style="background:#0b0f16"></i><i style="background:#212a38"></i><i style="background:#c48d62"></i><i style="background:#efe7da"></i></dd>
+            <dt>Typographies</dt><dd>Bodoni Moda · Jost</dd>
+          </dl>
+          <div class="actions">
+            <a class="btn" href="stitch_midnight_wedding_digital_invitation/index.html">Voir le modèle</a>
+            <a class="btn btn--line" href="stitch_midnight_wedding_digital_invitation/index.html?invite=Famille%20Kabeya">Version personnalisée</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="model">
+        <span class="model__n">02</span>
+        <a class="model__preview" href="stitch_botanical_contemporary_wedding_invitation/index.html" style="--c1:#3f4a36">
+          <img src="stitch_botanical_contemporary_wedding_invitation/assets/img/hero.jpg" alt="Aperçu du modèle Jardin" loading="lazy">
+          <span>Ouvrir le modèle →</span>
+        </a>
+        <div>
+          <h2>Jardin</h2>
+          <p class="model__for">Mariage champêtre · Samuel &amp; Grâce, Provence</p>
+          <p class="model__desc">Lin, olivier et terre d'argile. Arches provençales, rameau d'olivier qui pousse à l'écran, carte du domaine intégrée et une vigne qui grandit au fil du programme.</p>
+          <dl class="specs">
+            <dt>Palette</dt><dd class="palette"><i style="background:#f6f1e7"></i><i style="background:#9caa91"></i><i style="background:#3f4a36"></i><i style="background:#c4825f"></i></dd>
+            <dt>Typographies</dt><dd>Fraunces · Figtree</dd>
+          </dl>
+          <div class="actions">
+            <a class="btn" href="stitch_botanical_contemporary_wedding_invitation/index.html">Voir le modèle</a>
+            <a class="btn btn--line" href="stitch_botanical_contemporary_wedding_invitation/index.html?invite=Mireille%20Ngoy">Version personnalisée</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="model">
+        <span class="model__n">03</span>
+        <a class="model__preview" href="stitch_invitation_digitale_luxe_editorial/index.html" style="--c1:#111110">
+          <img src="stitch_invitation_digitale_luxe_editorial/assets/img/cover.jpg" alt="Aperçu du modèle Magazine" loading="lazy" style="object-position:50% 25%">
+          <span>Ouvrir le modèle →</span>
+        </a>
+        <div>
+          <h2>Magazine</h2>
+          <p class="model__for">Mariage black tie · Samuel &amp; Grâce, Kinshasa</p>
+          <p class="model__desc">Une édition spéciale façon magazine de mode : couverture avec masthead, bandeau défilant, édito personnalisé, nuancier type Pantone, portfolio en plein écran et badge VIP.</p>
+          <dl class="specs">
+            <dt>Palette</dt><dd class="palette"><i style="background:#f6f2ea"></i><i style="background:#111110"></i><i style="background:#b08d57"></i><i style="background:#183a2f"></i></dd>
+            <dt>Typographies</dt><dd>Playfair Display · Archivo</dd>
+          </dl>
+          <div class="actions">
+            <a class="btn" href="stitch_invitation_digitale_luxe_editorial/index.html">Voir le modèle</a>
+            <a class="btn btn--line" href="stitch_invitation_digitale_luxe_editorial/index.html?invite=Famille%20Lukusa">Version personnalisée</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="model">
+        <span class="model__n">04</span>
+        <a class="model__preview" href="stitch_kinshasa_editorial_graduate_invitation/index.html" style="--c1:#4d0c1d">
+          <img src="stitch_kinshasa_editorial_graduate_invitation/assets/img/portrait.jpg" alt="Aperçu du modèle Lauréate" loading="lazy" style="object-position:50% 20%">
+          <span>Ouvrir le modèle →</span>
+        </a>
+        <div>
+          <h2>Lauréate</h2>
+          <p class="model__for">Collation universitaire · Kahindo Mutombo, UPC</p>
+          <p class="model__desc">Bordeaux velours et or patiné. L'invité brise un sceau de cire pour ouvrir l'enveloppe à son nom, puis découvre un compte à rebours en anneaux d'or et un billet à liseré doré.</p>
+          <dl class="specs">
+            <dt>Palette</dt><dd class="palette"><i style="background:#4d0c1d"></i><i style="background:#c09a5b"></i><i style="background:#f2dcd6"></i><i style="background:#fffaf7"></i></dd>
+            <dt>Typographies</dt><dd>Cormorant Garamond · Manrope · Pinyon Script</dd>
+          </dl>
+          <div class="actions">
+            <a class="btn" href="stitch_kinshasa_editorial_graduate_invitation/index.html">Voir le modèle</a>
+            <a class="btn btn--line" href="stitch_kinshasa_editorial_graduate_invitation/index.html?invite=Docteur%20Mbala%20%26%20Famille">Version personnalisée</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="model">
+        <span class="model__n">05</span>
+        <a class="model__preview" href="stitch_academic_atelier_collation_invitation/index.html" style="--c1:#15191d">
+          <img src="stitch_academic_atelier_collation_invitation/assets/img/campus.jpg" alt="Aperçu du modèle Atelier" loading="lazy">
+          <span>Ouvrir le modèle →</span>
+        </a>
+        <div>
+          <h2>Atelier</h2>
+          <p class="model__for">Collation des grades · Kabeya Mukendi Marc, UNIKIN</p>
+          <p class="model__desc">Esthétique de dossier d'archive : grille suisse, métadonnées en police mono, horloge de Kinshasa en direct, tableau horaire qui signale la séquence en cours et tampon « Confirmé » à la réponse.</p>
+          <dl class="specs">
+            <dt>Palette</dt><dd class="palette"><i style="background:#f1eee7"></i><i style="background:#15191d"></i><i style="background:#1d3b5c"></i><i style="background:#e3b22c"></i></dd>
+            <dt>Typographies</dt><dd>Space Grotesk · IBM Plex Mono · Instrument Serif</dd>
+          </dl>
+          <div class="actions">
+            <a class="btn" href="stitch_academic_atelier_collation_invitation/index.html">Voir le modèle</a>
+            <a class="btn btn--line" href="stitch_academic_atelier_collation_invitation/index.html?invite=Madame%20C%C3%A9leste%20Mbuyi">Version personnalisée</a>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </main>
+
+  <footer class="wrap">Tous les textes, dates, lieux et photos sont modifiables pour chaque client. Sites légers, sans framework, optimisés mobile.</footer>
+</body>
+</html>
